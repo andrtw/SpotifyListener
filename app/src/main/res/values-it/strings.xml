@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_description">Spotify Listener ti dice quale canzone, 
+        da quale album e da quale artista stai ascoltando su Spotify al momento
+        senza guardare lo schermo del tuo dispositivo!
+        Puoi personalizzare l\'ordine e che cosa l\'app dirà in base alle tue preferenze.
+    </string>
+    <string name="settings_title">Impostazioni</string>
+    <string name="checkbox_track_name">Traccia</string>
+    <string name="checkbox_album_name">Album</string>
+    <string name="checkbox_artist_name">Artista</string>
+    <string name="test_button">Testalo!</string>
+    <string name="edit_text_track_hint">Traccia</string>
+    <string name="edit_text_album_hint">Album</string>
+    <string name="edit_text_artist_hint">Artista</string>
+    <string name="content_description_drag_track">Trascina traccia</string>
+    <string name="content_description_drag_album">Trascina album</string>
+    <string name="content_description_drag_artist">Trascina artista</string>
+    <string name="disabled_message">Spotify Listener non sta funzionando al momento :(</string>
+    <string name="tts_error_language">Errore! Lingua non disponibile.</string>
+</resources>

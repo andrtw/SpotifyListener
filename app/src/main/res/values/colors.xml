@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Main -->
+    <color name="colorPrimary">#4CAF50</color>
+    <color name="colorPrimaryDark">#388E3C</color>
+    <color name="colorAccent">#00C853</color>
+    
+    <!-- Errors -->
+    <color name="errorRed">#d50000</color>
+    
+    <!-- Draggable Layouts -->
+    <color name="targetHoverBorder">#1B5E20</color>
+    <color name="lightGreen">#C8E6C9</color>
+    <color name="veryLightGreen">#E8F5E9</color>
+    <color name="lightGreenHover">#DCEDC8</color>
+    <color name="veryLightGreenHover">#F1F8E9</color>
+    
+    <!-- Custom Toast -->
+    <color name="toastText">#fff</color>
+    <color name="toastBackground">#e62f8653</color>
+    
+</resources>
