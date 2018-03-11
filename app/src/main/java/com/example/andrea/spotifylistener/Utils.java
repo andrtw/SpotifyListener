@@ -13,53 +13,10 @@ import java.util.ArrayList;
 public class Utils {
     
     private static final String TAG = "SPOTIFY_LISTENER";
-    
-    /**
-     * Global parameters
-     */
-    public static class Params {
-        public static final int PARAM_LAYOUT_TRACK = 0;
-        public static final int PARAM_LAYOUT_ALBUM = 1;
-        public static final int PARAM_LAYOUT_ARTIST = 2;
-        
-        /**
-         * Positions for layouts to swap
-         */
-        public static class LayoutPosition {
-            public static final int FIRST = 0;
-            public static final int SECOND = 1;
-            public static final int THIRD = 2;
-        }
-        
-        /**
-         * Types of Broadcast Intents sent by Spotify
-         */
-        public static final class BroadcastTypes {
-            public static final String SPOTIFY_PACKAGE = "com.spotify.music";
-            public static final String PLAYBACK_STATE_CHANGED = SPOTIFY_PACKAGE + ".playbackstatechanged";
-            public static final String QUEUE_CHANGED = SPOTIFY_PACKAGE + ".queuechanged";
-            public static final String METADATA_CHANGED = SPOTIFY_PACKAGE + ".metadatachanged";
-        }
-        
-        public static final class BroadcastExtras {
-            public static final String EXTRA_TYPE = "type";
-            public static final String EXTRA_TRACK_ID = "trackId";
-            public static final String EXTRA_ARTIST_NAME = "artistName";
-            public static final String EXTRA_ALBUM_NAME = "albumName";
-            public static final String EXTRA_TRACK_NAME = "trackName";
-            public static final String EXTRA_TRACK_LENGTH_IN_SEC = "trackLengthInSec";
-            public static final String EXTRA_PLAYING = "playing";
-            public static final String EXTRA_POSITION_IN_MS = "positionInMs";
-        }
-        
-        public static final String SAMPLE_TRACK = "Basket Case";
-        public static final String SAMPLE_ALBUM = "Dookie";
-        public static final String SAMPLE_ARTIST = "Green Day";
-        
-    }
-    
-    /**
-     * Calculates the position of the layout
+
+    culates the
+    position of
+    the layout
      *
      * @param width       Width of the root layout
      * @param subdivision How many areas is the root layout divided in
@@ -113,7 +70,7 @@ public class Utils {
      * @param editTexts List that must contain track, album and artist EditText
      */
     public static void saveIntermediate(Context ctx, ArrayList<EditText> editTexts) {
-        SettingsManager sm = new SettingsManager(ctx);
+        SettingsManager sm = SettingsManager.getInstance(ctx);
         sm.setIntermediateWords(
                 editTexts.get(0).getText().toString(),
                 editTexts.get(1).getText().toString(),
@@ -139,7 +96,52 @@ public class Utils {
     }
     
     /**
-     * Enable or disable the EditText you want
+     * Enable or
+     /**
+     * Global parameters
+     */
+    public static class Params {
+        public static final int PARAM_LAYOUT_TRACK = 0;
+        public static final int PARAM_LAYOUT_ALBUM = 1;
+        public static final int PARAM_LAYOUT_ARTIST = 2;
+        public static final String SAMPLE_TRACK = "Basket Case";
+        public static final String SAMPLE_ALBUM = "Dookie";
+        public static final String SAMPLE_ARTIST = "Green Day";
+
+        /**
+         * Positions for layouts to swap
+         */
+        public static class LayoutPosition {
+            public static final int FIRST = 0;
+            public static final int SECOND = 1;
+            public static final int THIRD = 2;
+        }
+
+        /**
+         * Types of Broadcast Intents sent by Spotify
+         */
+        public static final class BroadcastTypes {
+            public static final String SPOTIFY_PACKAGE = "com.spotify.music";
+            public static final String PLAYBACK_STATE_CHANGED = SPOTIFY_PACKAGE + ".playbackstatechanged";
+            public static final String QUEUE_CHANGED = SPOTIFY_PACKAGE + ".queuechanged";
+            public static final String METADATA_CHANGED = SPOTIFY_PACKAGE + ".metadatachanged";
+        }
+
+        public static final class BroadcastExtras {
+            public static final String EXTRA_TYPE = "type";
+            public static final String EXTRA_TRACK_ID = "trackId";
+            public static final String EXTRA_ARTIST_NAME = "artistName";
+            public static final String EXTRA_ALBUM_NAME = "albumName";
+            public static final String EXTRA_TRACK_NAME = "trackName";
+            public static final String EXTRA_TRACK_LENGTH_IN_SEC = "trackLengthInSec";
+            public static final String EXTRA_PLAYING = "playing";
+            public static final String EXTRA_POSITION_IN_MS = "positionInMs";
+        }
+
+    }
+
+    /**
+     * Cal disable the EditText you want
      *
      * @param editTexts List of EditTexts
      * @param track     Boolean

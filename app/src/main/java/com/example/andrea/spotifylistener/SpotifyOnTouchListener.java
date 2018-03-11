@@ -12,13 +12,12 @@ import java.util.ArrayList;
 /**
  * Created by Andrea on 19/06/2016.
  */
-public class MyOnTouchListener implements View.OnTouchListener {
+public class SpotifyOnTouchListener implements View.OnTouchListener {
     private static final String TAG = "SPOTIFY_LISTENER";
     
     private ArrayList<EditText> editTexts;
-    
-    public MyOnTouchListener(ArrayList<EditText> editTexts) {
-        ;
+
+    public SpotifyOnTouchListener(ArrayList<EditText> editTexts) {
         this.editTexts = editTexts;
     }
     

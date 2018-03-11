@@ -15,16 +15,16 @@ import java.util.Comparator;
 /**
  * Created by Andrea on 21/06/2016.
  */
-public class MyOnDragListener implements View.OnDragListener {
+public class SpotifyOnDragListener implements View.OnDragListener {
     
     private static final String TAG = "SPOTIFY_LISTENER";
     
     private ArrayList<EditText> editTexts;
     private ArrayList<CheckBox> checkBoxes;
     private SettingsManager sm;
-    
-    public MyOnDragListener(Context ctx, ArrayList<EditText> editTexts, ArrayList<CheckBox> checkBoxes) {
-        sm = new SettingsManager(ctx);
+
+    public SpotifyOnDragListener(Context ctx, ArrayList<EditText> editTexts, ArrayList<CheckBox> checkBoxes) {
+        sm = SettingsManager.getInstance(ctx);
         this.editTexts = editTexts;
         this.checkBoxes = checkBoxes;
     }

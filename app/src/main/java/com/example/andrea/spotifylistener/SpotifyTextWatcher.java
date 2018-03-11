@@ -10,12 +10,12 @@ import java.util.ArrayList;
 /**
  * Created by Andrea on 25/06/2016.
  */
-public class MyTextWatcher implements TextWatcher {
+public class SpotifyTextWatcher implements TextWatcher {
     
     private Context ctx;
     private ArrayList<EditText> editTexts;
-    
-    public MyTextWatcher(Context ctx, ArrayList<EditText> editTexts) {
+
+    public SpotifyTextWatcher(Context ctx, ArrayList<EditText> editTexts) {
         this.ctx = ctx;
         this.editTexts = editTexts;
     }

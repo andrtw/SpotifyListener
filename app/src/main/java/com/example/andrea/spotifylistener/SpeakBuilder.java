@@ -19,14 +19,13 @@ public class SpeakBuilder {
     private static final Character SPACE = ' ';
     
     public static String build(Context ctx, String track, String album, String artist) {
-        SettingsManager sm = new SettingsManager(ctx);
+        SettingsManager sm = SettingsManager.getInstance(ctx);
         /*
         * Structure of toBeSpoken:
         * intermediateTrack + track + intermediateAlbum + album + intermediateArtist + artist
         * if track, album or artist is empty, then this and its intermediate won't be played
         * */
-        String toBeSpoken = "";
-        
+        StringBuilder sb = new StringBuilder();
         
         HashMap<String, Boolean> whatToSay = sm.getWhatToSay();
         HashMap<String, String> intermediate = sm.getIntermediateWords();
@@ -53,19 +52,19 @@ public class SpeakBuilder {
         for (Map.Entry<String, Integer> e : layoutList) {
             switch (e.getKey()) {
                 case SettingsManager.PREF_KEY_LAYOUT_TRACK:
-                    toBeSpoken += shouldBeSpoken(track, intermediateTrack, playTrack);
+                    sb.append(shouldBeSpoken(track, intermediateTrack, playTrack));
                     break;
                 case SettingsManager.PREF_KEY_LAYOUT_ALBUM:
-                    toBeSpoken += shouldBeSpoken(album, intermediateAlbum, playAlbum);
+                    sb.append(shouldBeSpoken(album, intermediateAlbum, playAlbum));
                     break;
                 case SettingsManager.PREF_KEY_LAYOUT_ARTIST:
-                    toBeSpoken += shouldBeSpoken(artist, intermediateArtist, playArtist);
+                    sb.append(shouldBeSpoken(artist, intermediateArtist, playArtist));
                     break;
             }
         }
-        
-        Log.i(TAG, "-" + toBeSpoken.trim() + "-");
-        return toBeSpoken.trim();
+
+        Log.i(TAG, "-" + sb.toString().trim() + "-");
+        return sb.toString().trim();
     }
     
     private static String shouldBeSpoken(String what, String intermediate, boolean speak) {

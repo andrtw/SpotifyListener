@@ -12,7 +12,7 @@ import java.util.Locale;
 /**
  * Created by Andrea on 18/06/2016.
  */
-public class TTS extends Service implements TextToSpeech.OnInitListener {
+public class TTSService extends Service implements TextToSpeech.OnInitListener {
     
     private static final String TAG = "SPOTIFY_LISTENER";
     
@@ -27,20 +27,20 @@ public class TTS extends Service implements TextToSpeech.OnInitListener {
     private String trackName;
     private int trackLengthInSec;
     
-    private boolean playing;
-    private int positionInMs;
+    /*private boolean playing;
+    private int positionInMs;*/
     
     
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
         Log.i(TAG, "onStartCommand()");
-        sm = new SettingsManager(this);
+        sm = SettingsManager.getInstance(this);
         tts = new TextToSpeech(this, this);
-        
+
         if (intent != null) {
             type = intent.getStringExtra(Utils.Params.BroadcastExtras.EXTRA_TYPE);
             Log.i(TAG, "type from onStartCommand(): " + type);
-            if (type.equals(Utils.Params.BroadcastTypes.METADATA_CHANGED)) {
+            if (Utils.Params.BroadcastTypes.METADATA_CHANGED.equals(type)) {
                 trackId = intent.getStringExtra(Utils.Params.BroadcastExtras.EXTRA_TRACK_ID);
                 artistName = intent.getStringExtra(Utils.Params.BroadcastExtras.EXTRA_ARTIST_NAME);
                 albumName = intent.getStringExtra(Utils.Params.BroadcastExtras.EXTRA_ALBUM_NAME);

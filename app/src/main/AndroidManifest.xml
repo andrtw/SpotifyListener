@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest package="com.example.andrea.spotifylistener"
-          xmlns:android="http://schemas.android.com/apk/res/android">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.andrea.spotifylistener">
     
     <application
         android:allowBackup="true"
@@ -19,7 +19,7 @@
         </activity>
         
         <receiver
-            android:name=".MyBroadcastReceiver"
+            android:name=".SpotifyBroadcastReceiver"
             android:enabled="true">
             <intent-filter>
                 <action android:name="com.spotify.music.playbackstatechanged"/>
@@ -27,7 +27,7 @@
                 <action android:name="com.spotify.music.queuechanged"/>
             </intent-filter>
         </receiver>
-        <service android:name=".TTS"/>
+        <service android:name=".TTSService" />
     </application>
 
 </manifest>
