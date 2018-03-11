@@ -14,9 +14,8 @@ public class Utils {
     
     private static final String TAG = "SPOTIFY_LISTENER";
 
-    culates the
-    position of
-    the layout
+    /**
+     * Calculates the position of the layout
      *
      * @param width       Width of the root layout
      * @param subdivision How many areas is the root layout divided in
@@ -94,7 +93,24 @@ public class Utils {
             i++;
         }
     }
-    
+
+    /**
+     * Cal disable the EditText you want
+     *
+     * @param editTexts List of EditTexts
+     * @param track     Boolean
+     * @param album     Boolean
+     * @param artist    Boolean
+     */
+    public static void enableEditTexts(ArrayList<EditText> editTexts, boolean track, boolean album, boolean artist) {
+        if (editTexts.size() > 3) {
+            throw new RuntimeException("EditTexts list must contain three elements");
+        }
+        editTexts.get(0).setEnabled(track);
+        editTexts.get(1).setEnabled(album);
+        editTexts.get(2).setEnabled(artist);
+    }
+
     /**
      * Enable or
      /**
@@ -138,23 +154,6 @@ public class Utils {
             public static final String EXTRA_POSITION_IN_MS = "positionInMs";
         }
 
-    }
-
-    /**
-     * Cal disable the EditText you want
-     *
-     * @param editTexts List of EditTexts
-     * @param track     Boolean
-     * @param album     Boolean
-     * @param artist    Boolean
-     */
-    public static void enableEditTexts(ArrayList<EditText> editTexts, boolean track, boolean album, boolean artist) {
-        if (editTexts.size() > 3) {
-            throw new RuntimeException("EditTexts list must contain three elements");
-        }
-        editTexts.get(0).setEnabled(track);
-        editTexts.get(1).setEnabled(album);
-        editTexts.get(2).setEnabled(artist);
     }
     
 }
